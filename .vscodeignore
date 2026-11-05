@@ -5,3 +5,5 @@ out/**/*.test.js
 node_modules/**
 .vscode/**
 tsconfig.json
+.gitignore
+media/demo.gif
