@@ -1,0 +1,80 @@
+{
+  "name": "dog-on-compile",
+  "displayName": "Dog on Compile",
+  "description": "A dancing chihuahua pops up every time your code compiles successfully.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noxiousamir/dog-on-compile.git"
+  },
+  "bugs": {
+    "url": "https://github.com/noxiousamir/dog-on-compile/issues"
+  },
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "build",
+    "compile",
+    "dog",
+    "chihuahua",
+    "meme",
+    "celebration",
+    "fun"
+  ],
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "dogOnCompile.show",
+        "title": "Dog on Compile: Show Dog"
+      }
+    ],
+    "configuration": {
+      "title": "Dog on Compile",
+      "properties": {
+        "dogOnCompile.pattern": {
+          "type": "string",
+          "default": "build|compile|tsc|make|gcc|g\\+\\+|clang|javac|cargo|go build|dotnet|mvn|gradle|webpack|vite|esbuild",
+          "description": "Regex (case-insensitive) matched against task names and terminal commands that count as compiling."
+        },
+        "dogOnCompile.sound": {
+          "type": "boolean",
+          "default": true,
+          "description": "Play the video's audio."
+        },
+        "dogOnCompile.durationSeconds": {
+          "type": "number",
+          "default": 3,
+          "minimum": 3,
+          "maximum": 60,
+          "description": "How long the dog stays on screen (the clip plays once, ~3s)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "npm run build && node --test out/*.test.js",
+    "package": "vsce package --allow-missing-repository"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.95.0",
+    "@vscode/vsce": "^3.0.0",
+    "typescript": "^5.6.0"
+  }
+}
