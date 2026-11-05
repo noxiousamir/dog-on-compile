@@ -3,7 +3,7 @@
   "displayName": "Dog on Compile",
   "description": "A dancing chihuahua pops up every time your code compiles successfully.",
   "version": "0.0.1",
-  "publisher": "local",
+  "publisher": "noxiousamir",
   "license": "MIT",
   "repository": {
     "type": "git",
